@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUVEZ | Prodüktör & Sanatçı</title>
+    <meta name="description" content="Guvez - Modern trap müzik prodüktörü ve sanatçı. Özgün sound ve benzersiz prodüksiyonlar.">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <link rel="alternate icon" href="logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <div class="logo">GUVEZ</div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-links">
+                <a href="#music">MÜZİK</a>
+                <a href="#about">HAKKIMDA</a>
+                <a href="#contact">İLETİŞİM</a>
+            </div>
+            <button class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Scroll indikatörü -->
+    <div class="scroll-progress"></div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="animated-background">
+            <div class="floating-element" data-speed="1"></div>
+            <div class="floating-element" data-speed="2"></div>
+            <div class="floating-element" data-speed="3"></div>
+            <div class="floating-element" data-speed="2"></div>
+            <div class="floating-element" data-speed="1"></div>
+            <div class="floating-note">♪</div>
+            <div class="floating-note">♫</div>
+            <div class="floating-note">♬</div>
+        </div>
+        <div class="wave-animation"></div>
+        <div class="hero-content">
+            <div class="hero-left">
+                <div class="artist-info">
+                    <h1>GUVEZ</h1>
+                    <p>Sanatçı, Müzik Prodüktörü</p>
+                    <div class="social-links">
+                        <a href="https://open.spotify.com/artist/79tejAQLRrqU5y80qNUc3D" target="_blank" class="spotify-link">
+                            <i class="fab fa-spotify"></i>
+                            <span class="tooltip">Spotify</span>
+                        </a>
+                        <a href="https://www.instagram.com/guvez_m/" target="_blank" class="instagram-link">
+                            <i class="fab fa-instagram"></i>
+                            <span class="tooltip">Instagram</span>
+                        </a>
+                        <a href="https://on.soundcloud.com/DK1TiaeVPuVBf3QZA" target="_blank" class="soundcloud-link">
+                            <i class="fab fa-soundcloud"></i>
+                            <span class="tooltip">SoundCloud</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="latest-track">
+                    <span class="tag">YENİ ÇIKAN</span>
+                    <iframe style="border-radius:12px" 
+                        src="https://open.spotify.com/embed/track/6bIhRvtKlxCnDGMOagLiTk?utm_source=generator&theme=0" 
+                        width="100%" 
+                        height="152" 
+                        frameBorder="0" 
+                        allowfullscreen="" 
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero section'a 3D katmanlar ekleyelim -->
+    <div class="hero-layers">
+        <div class="layer" data-speed="0.1"></div>
+        <div class="layer" data-speed="0.2"></div>
+        <div class="layer" data-speed="0.3"></div>
+    </div>
+
+    <!-- Müzik dalgası için canvas ekleyelim -->
+    <canvas id="waveCanvas"></canvas>
+
+    <!-- Music Section -->
+    <section id="music" class="music">
+        <div class="animated-background">
+            <div class="floating-element" data-speed="1"></div>
+            <div class="floating-element" data-speed="2"></div>
+            <div class="floating-element" data-speed="3"></div>
+            <div class="floating-note">♪</div>
+            <div class="floating-note">♫</div>
+        </div>
+        <div class="wave-animation"></div>
+        <h2>MÜZİK</h2>
+        <div class="music-container">
+            <div class="track-list">
+                <div class="track">
+                    <div class="track-inner">
+                        <iframe style="border-radius:12px" 
+                            src="https://open.spotify.com/embed/track/6FTOdFrG9ayalweTDePu2L?utm_source=generator&theme=0" 
+                            width="100%" 
+                            height="152" 
+                            frameBorder="0" 
+                            allowfullscreen="" 
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="track">
+                    <div class="track-inner">
+                        <iframe style="border-radius:12px" 
+                            src="https://open.spotify.com/embed/track/6bIhRvtKlxCnDGMOagLiTk?utm_source=generator&theme=0" 
+                            width="100%" 
+                            height="152" 
+                            frameBorder="0" 
+                            allowfullscreen="" 
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="animated-background">
+            <div class="floating-element" data-speed="2"></div>
+            <div class="floating-element" data-speed="1"></div>
+            <div class="floating-element" data-speed="3"></div>
+            <div class="floating-note">♬</div>
+            <div class="floating-note">♪</div>
+        </div>
+        <div class="wave-animation"></div>
+        <h2>HAKKIMDA</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Guvez, müzik dünyasında kendi yolunu çizen ve tüm prodüksiyon süreçlerini tek başına yöneten bir sanatçı olarak dikkat çekiyor. Çocukluk yıllarında müziğe olan ilgisini keşfeden Guvez, yaklaşık 6-7 yıldır zaman zaman prodüktörlük yaparak yeteneklerini geliştirdi. Müzik kariyerinde özellikle Juice WRLD, Lil Uzi Vert, Young Thug gibi yabancı rap sanatçılarından ve yerli sahneden Khontkar, Lil Zey, BEGE gibi sanatçılardan ilham alarak, instrumental trap türünde kendi özgün sound'unu oluşturdu.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="animated-background">
+            <div class="floating-element" data-speed="1"></div>
+            <div class="floating-element" data-speed="3"></div>
+            <div class="floating-element" data-speed="2"></div>
+            <div class="floating-note">♫</div>
+            <div class="floating-note">♬</div>
+        </div>
+        <div class="wave-animation"></div>
+        <h2>İLETİŞİM</h2>
+        <div class="contact-content">
+            <a href="mailto:prodbyguvez@gmail.com" class="contact-btn">
+                <i class="fas fa-envelope"></i>
+                prodbyguvez@gmail.com
+            </a>
+            <div class="social-links">
+                <a href="https://www.instagram.com/guvez_m/" target="_blank" class="instagram-link">
+                    <i class="fab fa-instagram"></i>
+                    <span class="tooltip">Instagram</span>
+                </a>
+                <a href="https://open.spotify.com/artist/79tejAQLRrqU5y80qNUc3D" target="_blank" class="spotify-link">
+                    <i class="fab fa-spotify"></i>
+                    <span class="tooltip">Spotify</span>
+                </a>
+                <a href="https://on.soundcloud.com/DK1TiaeVPuVBf3QZA" target="_blank" class="soundcloud-link">
+                    <i class="fab fa-soundcloud"></i>
+                    <span class="tooltip">SoundCloud</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 GUVEZ</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

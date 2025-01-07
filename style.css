@@ -1,0 +1,919 @@
+/* Tema değişkenleri */
+:root {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #151515;
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --accent: #881c34;
+    --accent-light: rgba(136, 28, 52, 0.2);
+    --border: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f8f8;
+    --text-primary: #0a0a0a;
+    --text-secondary: rgba(10, 10, 10, 0.7);
+    --accent: #881c34;
+    --accent-light: rgba(136, 28, 52, 0.1);
+    --border: rgba(0, 0, 0, 0.1);
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: rgba(var(--bg-primary), 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    text-shadow: 0 0 20px var(--accent);
+    letter-spacing: 4px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 3rem;
+}
+
+.nav-links a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    padding: 100px 2rem 2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    overflow: hidden;
+}
+
+.wave-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        var(--accent-light) 0%,
+        transparent 10%,
+        var(--accent-light) 20%
+    );
+    background-size: 200% 200%;
+    animation: 
+        waveMove 20s ease-in-out infinite alternate;
+    opacity: 0.3;
+    will-change: transform;
+}
+
+@keyframes waveMove {
+    0% {
+        transform: translateY(-5%) scale(1.05);
+    }
+    100% {
+        transform: translateY(5%) scale(1.05);
+    }
+}
+
+.hero-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-left {
+    flex: 1;
+}
+
+.artist-info h1 {
+    font-size: 6rem;
+    font-weight: 800;
+    letter-spacing: 8px;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--text-primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px var(--accent-light);
+}
+
+.artist-info p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+}
+
+.hero-right {
+    flex: 1;
+    max-width: 500px;
+}
+
+.latest-track {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.latest-track:hover {
+    transform: translateY(-10px);
+}
+
+.tag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Music Section */
+.music {
+    padding: 8rem 2rem;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+.music h2 {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    letter-spacing: 4px;
+    background: linear-gradient(45deg, var(--text-primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px var(--accent-light);
+}
+
+.music-container {
+    position: relative;
+    z-index: 2;
+}
+
+.track-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.track {
+    background: var(--bg-primary);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 1px solid var(--border);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.track:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.track::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(136, 28, 52, 0.1),
+        transparent
+    );
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.track:hover::before {
+    opacity: 1;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
+/* About & Contact Sections */
+.about, .contact {
+    padding: 8rem 2rem;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+.about {
+    background: var(--bg-primary);
+}
+
+.contact {
+    background: var(--bg-secondary);
+}
+
+.about h2, .contact h2 {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    letter-spacing: 4px;
+    background: linear-gradient(45deg, var(--text-primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px var(--accent-light);
+}
+
+.about-content, .contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.social-links {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.social-links a {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--bg-secondary);
+    border: 2px solid var(--border);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.social-links a i {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    transition: all 0.4s ease;
+    z-index: 2;
+}
+
+.social-links a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    z-index: 1;
+}
+
+.social-links a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: transparent;
+}
+
+.social-links a:hover i {
+    color: #fff;
+    transform: scale(1.2);
+}
+
+.social-links a:hover::before {
+    width: 150%;
+    height: 150%;
+    top: -25%;
+    left: -25%;
+}
+
+/* Platform-specific styles */
+.spotify-link::before {
+    background: #1DB954;
+}
+
+.instagram-link::before {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.soundcloud-link::before {
+    background: #ff5500;
+}
+
+/* Tooltip */
+.social-links a .tooltip {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    padding: 6px 12px;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: 0.8rem;
+    border-radius: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+}
+
+.social-links a:hover .tooltip {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+    bottom: -35px;
+}
+
+/* Hover Animation */
+.social-links a:hover {
+    animation: none;
+}
+
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(136, 28, 52, 0.3);
+}
+
+/* Footer */
+footer {
+    padding: 2rem;
+    text-align: center;
+    background: var(--bg-primary);
+    border-top: 1px solid var(--border);
+    color: var(--text-secondary);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    color: var(--accent);
+    transform: rotate(15deg);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-right {
+        width: 100%;
+    }
+
+    .artist-info h1 {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .artist-info h1 {
+        font-size: 3rem;
+    }
+
+    .about h2, .contact h2, .music h2 {
+        font-size: 2.5rem;
+    }
+
+    .social-links {
+        gap: 1rem;
+    }
+    
+    .social-links a {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .social-links a i {
+        font-size: 1.5rem;
+    }
+}
+
+/* Scroll Progress Bar */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), #ff4d4d);
+    z-index: 1001;
+    transition: width 0.1s ease;
+}
+
+/* 3D Layers */
+.hero-layers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    transform-style: preserve-3d;
+}
+
+.layer:nth-child(1) {
+    background: radial-gradient(circle at center, var(--accent-light) 0%, transparent 70%);
+    opacity: 0.3;
+}
+
+.layer:nth-child(2) {
+    background: linear-gradient(45deg, var(--accent-light) 0%, transparent 100%);
+    opacity: 0.2;
+}
+
+.layer:nth-child(3) {
+    background: radial-gradient(circle at center, var(--accent) 0%, transparent 100%);
+    opacity: 0.1;
+}
+
+/* Wave Canvas */
+#waveCanvas {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Animated Background */
+.animated-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.floating-element {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: conic-gradient(
+        from 0deg at 50% 50%,
+        var(--accent) 0deg,
+        transparent 60deg,
+        var(--accent) 120deg,
+        transparent 180deg,
+        var(--accent) 240deg,
+        transparent 300deg,
+        var(--accent) 360deg
+    );
+    border-radius: 50%;
+    filter: blur(20px);
+    opacity: 0.2;
+    animation: 
+        float 30s infinite,
+        pulse 5s ease-in-out infinite;
+    will-change: transform;
+}
+
+.floating-element:nth-child(1) {
+    top: 20%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.floating-element:nth-child(2) {
+    top: 70%;
+    left: 75%;
+    width: 200px;
+    height: 200px;
+    animation-delay: -5s;
+}
+
+.floating-element:nth-child(3) {
+    top: 40%;
+    left: 45%;
+    width: 100px;
+    height: 100px;
+    animation-delay: -10s;
+}
+
+.floating-element:nth-child(4) {
+    top: 35%;
+    left: 65%;
+    width: 180px;
+    height: 180px;
+    animation-delay: -15s;
+}
+
+.floating-element:nth-child(5) {
+    top: 75%;
+    left: 35%;
+    width: 120px;
+    height: 120px;
+    animation-delay: -7s;
+}
+
+.floating-note {
+    position: absolute;
+    color: var(--accent);
+    font-size: 3rem;
+    opacity: 0.2;
+    filter: blur(2px);
+    animation: floatNote 20s infinite;
+    will-change: transform;
+}
+
+.floating-note:nth-child(6) {
+    top: 40%;
+    left: 70%;
+    animation-delay: -2s;
+}
+
+.floating-note:nth-child(7) {
+    top: 70%;
+    left: 30%;
+    animation-delay: -7s;
+}
+
+.floating-note:nth-child(8) {
+    top: 80%;
+    left: 40%;
+    animation-delay: -12s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(30px, -20px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.2; }
+}
+
+@keyframes waveMove {
+    0% {
+        transform: translateY(-5%) scale(1.05);
+    }
+    100% {
+        transform: translateY(5%) scale(1.05);
+    }
+}
+
+@keyframes floatNote {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(20px, -15px);
+    }
+}
+
+/* Spotify Player Özelleştirme */
+.track iframe {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 30px rgba(136, 28, 52, 0.2);
+}
+
+.track:hover iframe {
+    transform: scale(1.02);
+    box-shadow: 0 20px 40px rgba(136, 28, 52, 0.4);
+}
+
+/* 3D Kart Efekti */
+.track {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.track-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.track:hover .track-inner {
+    transform: translateZ(20px) rotateX(5deg) rotateY(5deg);
+}
+
+/* Gelişmiş Arka Plan Animasyonları */
+.floating-element {
+    background: conic-gradient(
+        from 0deg at 50% 50%,
+        var(--accent) 0deg,
+        transparent 60deg,
+        var(--accent) 120deg,
+        transparent 180deg,
+        var(--accent) 240deg,
+        transparent 300deg,
+        var(--accent) 360deg
+    );
+    animation: 
+        float 30s infinite,
+        pulse 5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.2; }
+}
+
+/* Gelişmiş Dalga Animasyonu */
+.wave-animation {
+    background: repeating-linear-gradient(
+        45deg,
+        var(--accent-light) 0%,
+        transparent 10%,
+        var(--accent-light) 20%
+    );
+    background-size: 200% 200%;
+    animation: 
+        waveMove 20s ease-in-out infinite alternate;
+    opacity: 0.3;
+    will-change: transform;
+}
+
+/* Hero Text Efekti */
+.artist-info h1 {
+    background: linear-gradient(
+        45deg,
+        var(--text-primary) 0%,
+        var(--accent) 50%,
+        var(--text-primary) 100%
+    );
+    animation: gradientText 10s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes gradientText {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+/* Gelişmiş Hover Efektleri */
+.social-links a:hover {
+    animation: wobble 0.8s ease-in-out;
+}
+
+@keyframes wobble {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    25% { transform: translateY(-5px) rotate(-5deg); }
+    50% { transform: translateY(-7px) rotate(0); }
+    75% { transform: translateY(-5px) rotate(5deg); }
+}
+
+/* Scroll Progress Bar Geliştirmesi */
+.scroll-progress {
+    background: var(--accent);
+    animation: none;
+}
+
+/* Arka plan elementlerinin sayısını azaltalım */
+.animated-background .floating-element:nth-child(4),
+.animated-background .floating-element:nth-child(5) {
+    display: none;
+}
+
+/* Gradient animasyonlarını basitleştirelim */
+.artist-info h1 {
+    background: linear-gradient(
+        45deg,
+        var(--text-primary) 0%,
+        var(--accent) 50%,
+        var(--text-primary) 100%
+    );
+    animation: gradientText 10s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Transform animasyonlarını GPU'ya yönlendirelim */
+.track, .social-links a, .latest-track {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Mobil Menü */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1002;
+}
+
+@media screen and (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--bg-primary);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1001;
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
+    }
+
+    /* Track düzeltmeleri */
+    .track {
+        padding: 1rem;
+    }
+
+    .track iframe {
+        height: 152px !important;
+        min-height: 152px !important;
+    }
+
+    .track-inner {
+        transform: none !important;
+    }
+
+    /* Hero section düzeltmeleri */
+    .hero {
+        padding-top: 120px;
+    }
+
+    .hero-content {
+        padding: 0 1rem;
+    }
+
+    .latest-track {
+        width: 100%;
+        max-width: none;
+    }
+
+    /* Sosyal medya butonları */
+    .social-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .social-links a {
+        width: 45px;
+        height: 45px;
+    }
+
+    .social-links a i {
+        font-size: 1.3rem;
+    }
+
+    /* Contact button */
+    .contact-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    /* Section başlıkları */
+    .music h2, .about h2, .contact h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    /* About text */
+    .about-text p {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+} 
