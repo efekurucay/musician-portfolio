@@ -1,6 +1,6 @@
 # GUVEZ - Musician Portfolio Website
 
-![GUVEZ Logo](logo.svg)
+<img src="logo.svg" alt="GUVEZ Logo" width="150" height="150" style="display: block; margin: 20px auto;">
 
 A modern and interactive portfolio website designed for trap music producer and musician GUVEZ.
 
