@@ -73,13 +73,6 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 GUVEZ is a musician who carves his own path in the music world and manages all production processes independently. With approximately 6-7 years of production experience, he has created a unique sound in the instrumental trap genre.
 
-## 🔗 Links
-
-- [Official Website](https://prodbyguvez.com)
-- [Spotify](https://open.spotify.com/artist/79tejAQLRrqU5y80qNUc3D)
-- [Instagram](https://www.instagram.com/guvez_m/)
-- [SoundCloud](https://on.soundcloud.com/DK1TiaeVPuVBf3QZA)
-
 ## 👨‍💻 Developer
 
 This project was developed by [Yahya Efe Kuruçay](https://efekurucay.com) for GUVEZ.
@@ -94,3 +87,8 @@ For musician inquiries:
 - Website: [prodbyguvez.com](https://prodbyguvez.com)
 - Email: prodbyguvez@gmail.com
 - Instagram: [@guvez_m](https://www.instagram.com/guvez_m/) 
+- SoundCloud:  [SoundCloud](https://on.soundcloud.com/DK1TiaeVPuVBf3QZA)
+- Spotify: [Spotify](https://open.spotify.com/artist/79tejAQLRrqU5y80qNUc3D)
+
+
+
